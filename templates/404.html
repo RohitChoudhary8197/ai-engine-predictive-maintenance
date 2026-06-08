@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-dark fixed-top navbar-custom">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand fw-bold logo-brand" href="/">
+        <i class="bi bi-lightning-charge-fill"></i> 
+        <span>Infotact Predictive Engine</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div class="nav-links d-flex gap-4">
+          <a href="/" class="nav-link-custom">Home</a>
+          <a href="/#dashboard" class="nav-link-custom">Dashboard</a>
+          <a href="/#predict" class="nav-link-custom">Predict</a>
+          <a href="/history" class="nav-link-custom">History</a>
+          <a href="/about" class="nav-link-custom">About</a>
+          <a href="/project" class="nav-link-custom">Project</a>
+          <a href="/contact" class="nav-link-custom">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 404 SECTION -->
+  <section style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 6rem;">
+    <div style="text-align: center; padding: 2rem;">
+      <div style="display: inline-block; margin-bottom: 2rem;">
+        <div style="
+          font-size: 6rem;
+          font-weight: 900;
+          background: linear-gradient(135deg, #f59e0b, #fbbf24);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          animation: pulse 2s ease-in-out infinite;
+        ">
+          404
+        </div>
+      </div>
+
+      <h1 class="fw-bold mb-3" style="font-size: 2.5rem; color: var(--text-primary);">
+        Oops! Page Nahi Mila
+      </h1>
+
+      <p class="text-secondary mb-4" style="font-size: 1.2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+        Aap galat page par pahuunch gaye ho. Yeh URL galat hai ya page delete ho gya hai.
+      </p>
+
+      <div style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.6)); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 1rem; padding: 2rem; margin: 2rem 0; max-width: 400px; margin-left: auto; margin-right: auto;">
+        <i class="bi bi-exclamation-triangle" style="font-size: 2rem; color: #f59e0b;"></i>
+        <p class="text-secondary mt-3 mb-0">
+          Agar aapko laga ki ye error hai to hume support@innovtech.com par contact kar sakte ho.
+        </p>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem;">
+        <a href="/" class="btn btn-predict-submit">
+          <i class="bi bi-house-fill"></i> Home Page
+        </a>
+        <a href="/about" class="btn btn-outline-warning">
+          <i class="bi bi-info-circle"></i> About Us
+        </a>
+        <a href="/contact" class="btn btn-outline-warning">
+          <i class="bi bi-chat-dots"></i> Contact
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <h6 class="footer-title">Infotact Predictive</h6>
+          <p class="footer-text">Advanced engine maintenance predictions using AI</p>
+        </div>
+        <div class="col-lg-2">
+          <h6 class="footer-title">Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/project">Project</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h6 class="footer-title">Contact</h6>
+          <p class="footer-text small">
+            <i class="bi bi-envelope"></i> support@infotact.com<br>
+            <i class="bi bi-telephone"></i> +91-7357919798
+          </p>
+        </div>
+        <div class="col-lg-3">
+          <h6 class="footer-title">Follow Us</h6>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="footer-credit">© 2026 Infotact. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-end">
+          <small class="footer-credit">Built with ❤️ for predictive maintenance</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

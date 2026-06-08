@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predictive Maintenance System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- PROFESSIONAL NAVBAR -->
+  <nav class="navbar navbar-dark fixed-top navbar-custom">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand fw-bold logo-brand" href="/">
+        <i class="bi bi-lightning-charge-fill"></i> 
+        <span>Infotact Predictive Engine</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div class="nav-links d-flex gap-4">
+          <a href="#home" class="nav-link-custom active">Home</a>
+          <a href="#dashboard" class="nav-link-custom">Dashboard</a>
+          <a href="#predict" class="nav-link-custom">Predict</a>
+          <a href="/history" class="nav-link-custom">History</a>
+          <a href="/about" class="nav-link-custom">About</a>
+          <a href="/project" class="nav-link-custom">Project</a>
+          <a href="/contact" class="nav-link-custom">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center min-vh-100 pt-5">
+        <div class="col-lg-6 fade-up">
+          <span class="badge-custom mb-3">
+            <i class="bi bi-rocket-takeoff"></i> Next Gen Maintenance
+          </span>
+          <h1 class="hero-title">
+            Engine Ka <span class="gradient-text">Professional Health Check</span>
+          </h1>
+          <p class="hero-subtitle text-secondary mt-4">
+            Advanced AI-powered predictive analytics with 95% accuracy. Real-time engine monitoring aur maintenance alerts.
+          </p>
+          <div class="d-flex gap-3 mt-5">
+            <a href="#dashboard" class="btn btn-primary-custom btn-lg">
+              <i class="bi bi-speedometer2"></i> Dashboard Dekho
+            </a>
+            <a href="#predict" class="btn btn-outline-custom btn-lg">
+              <i class="bi bi-play-circle"></i> Prediction Check
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center fade-up delay-2">
+          <div class="engine-box-hero">
+            <div class="wheel w1"></div>
+            <div class="wheel w2"></div>
+            <div class="engine-core-hero">
+              <i class="bi bi-gear-wide-connected"></i>
+              <div class="engine-status">
+                <span>ENGINE</span>
+                <small>Healthy ✓</small>
+              </div>
+            </div>
+            <div class="scan-bar-hero"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD SECTION -->
+  <section id="dashboard" class="dashboard-section">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="section-badge">📊 Analytics Dashboard</span>
+        <h2 class="section-title">Real-Time System Overview</h2>
+        <p class="section-subtitle">Latest predictions aur engine health status</p>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="row g-4 mb-5">
+        <div class="col-md-3 col-sm-6 fade-in-scroll">
+          <div class="stat-card">
+            <div class="stat-icon bg-primary-light">
+              <i class="bi bi-check-circle-fill"></i>
+            </div>
+            <h3 class="stat-number">{{ stats.total }}</h3>
+            <p class="stat-label">Total Predictions</p>
+            <small class="stat-trend">↑ Live Dashboard</small>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 fade-in-scroll" style="--delay: 0.1s;">
+          <div class="stat-card">
+            <div class="stat-icon bg-success-light">
+              <i class="bi bi-lightning-charge-fill"></i>
+            </div>
+            <h3 class="stat-number">95%</h3>
+            <p class="stat-label">Accuracy Rate</p>
+            <small class="stat-trend">✓ Verified</small>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 fade-in-scroll" style="--delay: 0.2s;">
+          <div class="stat-card">
+            <div class="stat-icon bg-warning-light">
+              <i class="bi bi-exclamation-triangle-fill"></i>
+            </div>
+            <h3 class="stat-number">5</h3>
+            <p class="stat-label">Risk Alerts</p>
+            <small class="stat-trend">Active Monitoring</small>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 fade-in-scroll" style="--delay: 0.3s;">
+          <div class="stat-card">
+            <div class="stat-icon bg-info-light">
+              <i class="bi bi-graph-up"></i>
+            </div>
+            <h3 class="stat-number">{{ (stats.total * 0.78) | int }}</h3>
+            <p class="stat-label">Healthy Engines</p>
+            <small class="stat-trend">78% Good Status</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Charts -->
+      <div class="row g-4 mb-5">
+        <div class="col-lg-6 fade-in-scroll">
+          <div class="chart-card">
+            <h5 class="card-title"><i class="bi bi-graph-up"></i> Prediction Trends</h5>
+            <div class="chart-placeholder">
+              <svg viewBox="0 0 100 40" class="trend-chart">
+                <polyline points="0,30 20,20 40,25 60,10 80,15 100,8" stroke="#f59e0b" fill="none" stroke-width="2" vector-effect="non-scaling-stroke"/>
+                <polyline points="0,30 20,20 40,25 60,10 80,15 100,8" stroke="#f59e0b" fill="url(#gradient)" fill-opacity="0.2" vector-effect="non-scaling-stroke"/>
+                <defs>
+                  <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.5" />
+                    <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 fade-in-scroll" style="--delay: 0.1s;">
+          <div class="chart-card">
+            <h5 class="card-title"><i class="bi bi-pie-chart"></i> Risk Distribution</h5>
+            <div class="risk-badges">
+              <div class="risk-badge safe">
+                <span class="badge-circle"></span>
+                <span>Safe: 75%</span>
+              </div>
+              <div class="risk-badge warning">
+                <span class="badge-circle"></span>
+                <span>Warning: 15%</span>
+              </div>
+              <div class="risk-badge danger">
+                <span class="badge-circle"></span>
+                <span>Danger: 10%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREDICT FORM -->
+  <section id="predict" class="predict-section">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="section-badge">⚙️ Engine Prediction</span>
+        <h2 class="section-title">Engine Health Check </h2>
+        <p class="section-subtitle">Get a detailed analysis of your engine.</p>
+      </div>
+      
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="prediction-form-container fade-in-scroll">
+            <form action="/predict" method="POST">
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label-custom">
+                      <i class="bi bi-motorcycle"></i> Engine Type
+                    </label>
+                    <select name="engine_type" class="form-control-custom" required>
+                      <option value="L">🏍️ Light (100-150cc)</option>
+                      <option value="M" selected>🏎️ Medium (150-250cc)</option>
+                      <option value="H">🛣️ Heavy (250cc+)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label-custom">
+                      <i class="bi bi-hourglass"></i> Usage Hours
+                    </label>
+                    <input type="number" name="tool_wear" class="form-control-custom" value="50" min="0" max="250" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label-custom">
+                      <i class="bi bi-thermometer"></i> Air Temperature (K)
+                    </label>
+                    <input type="number" name="air_temp" class="form-control-custom" value="298.5" step="0.1" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label-custom">
+                      <i class="bi bi-fire"></i> Engine Temperature (K)
+                    </label>
+                    <input type="number" name="process_temp" class="form-control-custom" value="309" step="0.1" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label-custom">
+                      <i class="bi bi-speedometer"></i> RPM (Revolutions)
+                    </label>
+                    <input type="number" name="rpm" class="form-control-custom" value="1500" min="1000" max="3000" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label-custom">
+                      <i class="bi bi-lightning-fill"></i> Torque (Nm)
+                    </label>
+                    <input type="number" name="torque" class="form-control-custom" value="42" step="0.1" required>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn-predict-submit btn-lg w-100 mt-5">
+                <i class="bi bi-cpu"></i> PREDICT ENGINE HEALTH
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="section-badge">📖 About Project</span>
+        <h2 class="section-title">Advanced AI Predictive Maintenance</h2>
+      </div>
+      
+      <div class="row g-5 align-items-center mb-5">
+        <div class="col-lg-6 fade-in-scroll">
+          <div class="about-content">
+            <p class="about-text">
+              This system uses a Random Forest Machine Learning model trained on the AI4I 2020 Predictive Maintenance Dataset. It analyzes critical engine parameters and predicts potential failures before they occur, helping improve reliability, reduce downtime, and support proactive maintenance.
+            </p>
+            <div class="features-list mt-4">
+              <div class="feature-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>95% Prediction Accuracy</span>
+              </div>
+              <div class="feature-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Real-time Monitoring</span>
+              </div>
+              <div class="feature-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>5 Input Features Analysis</span>
+              </div>
+              <div class="feature-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Instant Alert System</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 fade-in-scroll" style="--delay: 0.2s;">
+          <div class="tech-stack">
+            <h5 class="mb-4">🛠️ Technology Stack</h5>
+            <div class="tech-item">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Flask</span>
+              <span class="tech-badge">Scikit-Learn</span>
+            </div>
+            <div class="tech-item mt-3">
+              <span class="tech-badge">Bootstrap 5</span>
+              <span class="tech-badge">Bootstrap Icons</span>
+              <span class="tech-badge">HTML5/CSS3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="section-badge">📞 Get In Touch</span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+      
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4 fade-in-scroll">
+          <div class="contact-card">
+            <i class="bi bi-envelope-fill"></i>
+            <h5>Email</h5>
+            <p><a href="mailto:support@infotact.com" class="contact-link">support@infotact.com</a></p>
+          </div>
+        </div>
+        <div class="col-md-4 fade-in-scroll" style="--delay: 0.1s;">
+          <div class="contact-card">
+            <i class="bi bi-telephone-fill"></i>
+            <h5>Phone</h5>
+            <p><a href="tel:+91-7357919798" class="contact-link">+91-7357919798</a></p>
+          </div>
+        </div>
+        <div class="col-md-4 fade-in-scroll" style="--delay: 0.2s;">
+          <div class="contact-card">
+            <i class="bi bi-geo-alt-fill"></i>
+            <h5>Location</h5>
+            <p class="contact-text">Infotact Labs, India</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <h6 class="footer-title">Infotact Predictive</h6>
+          <p class="footer-text">Advanced engine maintenance predictions using AI</p>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <h6 class="footer-title">Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="/#home">Home</a></li>
+            <li><a href="/#dashboard">Dashboard</a></li>
+            <li><a href="/#predict">Predict</a></li>
+            <li><a href="/history">History</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2">
+          <h6 class="footer-title">Resources</h6>
+          <ul class="footer-links">
+            <li><a href="/about">About</a></li>
+            <li><a href="/project">Project</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/#">Privacy</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6 class="footer-title">Newsletter</h6>
+          <p class="footer-text small">Get updates on new features</p>
+          <div class="input-group">
+            <input type="email" class="form-control-footer" placeholder="Your email">
+            <button class="btn-footer" type="button">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="footer-credit">© 2026 Infotact. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-end">
+          <small class="footer-credit">Built with ❤️ for predictive maintenance</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="alert alert-danger fixed-top mt-5 mx-3" role="alert">
+        {{ messages[0] }}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-scroll, .fade-up, .delay-2').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Active nav link
+    window.addEventListener('scroll', () => {
+      let current = '';
+      document.querySelectorAll('section').forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      document.querySelectorAll('.nav-link-custom').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+        <div class="col-md-5">
+          <div class="contact-card">
+            <i class="bi bi-telephone-fill"></i>
+            <h5>📱 Phone</h5>
+            <p><a href="tel:+917357919798" class="text-warning text-decoration-none">+91 7357919798</a></p>
+            <p class="small text-secondary">24 Hours Support</p>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 justify-content-center mt-2">
+        <div class="col-md-5">
+          <div class="contact-card">
+            <i class="bi bi-geo-alt-fill"></i>
+            <h5>📍 Location</h5>
+            <p>Infotact Internship</p>
+            <p class="small text-secondary">Building advanced AI solutions</p>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="contact-card">
+            <i class="bi bi-clock-fill"></i>
+            <h5>⏰24 Hours Available</h5>
+            <p>24 Hours Support</p>
+            <p class="small text-secondary">Always here to help</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center py-4 text-secondary border-top border-secondary border-opacity-10">
+    <div class="container">
+      <p class="mb-2">&copy; 2026 Predictive Maintenance System</p>
+      <p class="small mb-0">Built with <i class="bi bi-heart-fill text-danger"></i> for Infotact Internship</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

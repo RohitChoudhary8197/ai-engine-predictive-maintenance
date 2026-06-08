@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Infotact Predictive Engine</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-dark fixed-top navbar-custom">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand fw-bold logo-brand" href="/">
+        <i class="bi bi-lightning-charge-fill"></i> 
+        <span>Infotact Predictive Engine</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div class="nav-links d-flex gap-4">
+          <a href="/" class="nav-link-custom">Home</a>
+          <a href="/#dashboard" class="nav-link-custom">Dashboard</a>
+          <a href="/#predict" class="nav-link-custom">Predict</a>
+          <a href="/history" class="nav-link-custom">History</a>
+          <a href="/about" class="nav-link-custom active">About</a>
+          <a href="/project" class="nav-link-custom">Project</a>
+          <a href="/contact" class="nav-link-custom">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" style="min-height: 60vh; display: flex; align-items: center; padding-top: 6rem;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 fade-up">
+          <span class="badge-custom mb-3">
+            <i class="bi bi-info-circle"></i> About Us
+          </span>
+          <h1 class="hero-title mb-4">
+            Advanced Engine <span class="gradient-text">Health Monitoring</span>
+          </h1>
+          <p class="hero-subtitle">
+            AI-powered predictive maintenance system jo bike engines ko proactively monitor karta hai aur failures ko predict karta hai before they happen.
+          </p>
+        </div>
+        <div class="col-lg-5 text-center fade-up delay-2">
+          <div class="stat-card" style="padding: 2.5rem; border-radius: 1.5rem;">
+            <i class="bi bi-brain fs-1 text-warning mb-3"></i>
+            <h3 class="text-warning fw-bold">95%</h3>
+            <p>Prediction Accuracy</p>
+            <small class="text-secondary">Using Random Forest ML</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT CONTENT -->
+  <section class="about-section">
+    <div class="container">
+      <div class="row align-items-center g-5 mb-5">
+        <div class="col-lg-6 fade-in-scroll">
+          <h2 class="section-title mb-4">Project Overview</h2>
+          <div class="about-content">
+            <p class="about-text mb-3">
+              <strong>Predictive Maintenance</strong> ek revolutionary approach hai industrial equipment ke maintenance mein. Yeh system bike engines ke critical parameters ko real-time monitor karta hai aur failure predictions provide karta hai.
+            </p>
+            <p class="about-text">
+              Advanced machine learning algorithms use karke, hum engine failures ko predict kar sakte hain, jisse costly downtime aur emergency repairs se bach sakte hain.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6 fade-in-scroll" style="--delay: 0.2s;">
+          <div class="tech-stack">
+            <h5 class="mb-4"><i class="bi bi-gear-wide"></i> Technology Stack</h5>
+            <div class="tech-item mb-3">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Flask</span>
+              <span class="tech-badge">Scikit-Learn</span>
+            </div>
+            <div class="tech-item mb-3">
+              <span class="tech-badge">Random Forest</span>
+              <span class="tech-badge">Pandas</span>
+              <span class="tech-badge">NumPy</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-badge">Bootstrap 5</span>
+              <span class="tech-badge">SQLite</span>
+              <span class="tech-badge">HTML5/CSS3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KEY FEATURES -->
+      <div class="row g-4 mb-5">
+        <div class="col-md-4 fade-in-scroll">
+          <div class="stat-card">
+            <div class="stat-icon bg-primary-light">
+              <i class="bi bi-lightning-charge-fill"></i>
+            </div>
+            <h5 class="stat-label">Real-Time Analysis</h5>
+            <p class="small text-secondary">Instant predictions with minimal latency</p>
+          </div>
+        </div>
+        <div class="col-md-4 fade-in-scroll" style="--delay: 0.1s;">
+          <div class="stat-card">
+            <div class="stat-icon bg-success-light">
+              <i class="bi bi-graph-up"></i>
+            </div>
+            <h5 class="stat-label">Data-Driven</h5>
+            <p class="small text-secondary">Based on 10000+ historical records</p>
+          </div>
+        </div>
+        <div class="col-md-4 fade-in-scroll" style="--delay: 0.2s;">
+          <div class="stat-card">
+            <div class="stat-icon bg-warning-light">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h5 class="stat-label">Reliable Alerts</h5>
+            <p class="small text-secondary">Proactive maintenance scheduling</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM COLLABORATION SECTION -->
+  <section class="py-5" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.5)); margin: 2rem 0;">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="section-badge">👥 Team Collaboration</span>
+        <h2 class="section-title">Our Development Team</h2>
+        <p class="section-subtitle">Building innovative solutions together</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Team Member 1 -->
+        <div class="col-md-4 fade-in-scroll">
+          <div class="team-card">
+            <div class="team-member-image">
+              <div class="avatar-placeholder">
+                <i class="bi bi-person-fill"></i>
+              </div>
+            </div>
+            <h5 class="team-name mt-3">Rohit Choudhary</h5>
+            <p class="team-role text-warning fw-bold">ML Model Development</p>
+            <p class="team-bio text-secondary small mb-3">
+              Random Forest model ko train aur optimize karta hai. Prediction accuracy improve karne par focus.
+            </p>
+            <div class="team-skills">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">ML Algorithms</span>
+              <span class="skill-tag">Data Analysis</span>
+            </div>
+            <div class="team-social mt-3">
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+              <a href="#"><i class="bi bi-github"></i></a>
+              <a href="#"><i class="bi bi-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="col-md-4 fade-in-scroll" style="--delay: 0.1s;">
+          <div class="team-card">
+            <div class="team-member-image">
+              <div class="avatar-placeholder">
+                <i class="bi bi-person-fill"></i>
+              </div>
+            </div>
+            <h5 class="team-name mt-3">Rohan</h5>
+            <p class="team-role text-warning fw-bold">Flask API & Database</p>
+            <p class="team-bio text-secondary small mb-3">
+              Flask server setup, API endpoints develop karta hai, aur database management handle karta hai.
+            </p>
+            <div class="team-skills">
+              <span class="skill-tag">Flask</span>
+              <span class="skill-tag">SQLite</span>
+              <span class="skill-tag">REST API</span>
+            </div>
+            <div class="team-social mt-3">
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+              <a href="#"><i class="bi bi-github"></i></a>
+              <a href="#"><i class="bi bi-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="col-md-4 fade-in-scroll" style="--delay: 0.2s;">
+          <div class="team-card">
+            <div class="team-member-image">
+              <div class="avatar-placeholder">
+                <i class="bi bi-person-fill"></i>
+              </div>
+            </div>
+            <h5 class="team-name mt-3">Pradeep</h5>
+            <p class="team-role text-warning fw-bold">UI/UX & Animations</p>
+            <p class="team-bio text-secondary small mb-3">
+              Beautiful UI design, responsive layout, aur smooth animations create karta hai.
+            </p>
+            <div class="team-skills">
+              <span class="skill-tag">Bootstrap 5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+            <div class="team-social mt-3">
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+              <a href="#"><i class="bi bi-github"></i></a>
+              <a href="#"><i class="bi bi-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+              <!-- Team Member 4 -->
+        <div class="col-md-4 fade-in-scroll" style="--delay: 0.1s;">
+          <div class="team-card">
+            <div class="team-member-image">
+              <div class="avatar-placeholder">
+                <i class="bi bi-person-fill"></i>
+              </div>
+            </div>
+            <h5 class="team-name mt-3">Aathithyaa</h5>
+            <p class="team-role text-warning fw-bold">Flask API & Database</p>
+            <p class="team-bio text-secondary small mb-3">
+              Flask server setup, API endpoints develop karta hai, aur database management handle karta hai.
+            </p>
+            <div class="team-skills">
+              <span class="skill-tag">Flask</span>
+              <span class="skill-tag">SQLite</span>
+              <span class="skill-tag">REST API</span>
+            </div>
+            <div class="team-social mt-3">
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+              <a href="#"><i class="bi bi-github"></i></a>
+              <a href="#"><i class="bi bi-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+
+      <!-- Collaboration Features -->
+      <div class="row g-4 mt-5">
+        <div class="col-lg-3 col-md-6 fade-in-scroll">
+          <div class="collab-feature">
+            <div class="collab-icon">
+              <i class="bi bi-chat-dots"></i>
+            </div>
+            <h6>Daily Standups</h6>
+            <p class="small">Regular sync meetings</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 fade-in-scroll" style="--delay: 0.1s;">
+          <div class="collab-feature">
+            <div class="collab-icon">
+              <i class="bi bi-git"></i>
+            </div>
+            <h6>Version Control</h6>
+            <p class="small">Git-based workflow</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 fade-in-scroll" style="--delay: 0.2s;">
+          <div class="collab-feature">
+            <div class="collab-icon">
+              <i class="bi bi-kanban"></i>
+            </div>
+            <h6>Agile Sprint</h6>
+            <p class="small">2-week development cycle</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 fade-in-scroll" style="--delay: 0.3s;">
+          <div class="collab-feature">
+            <div class="collab-icon">
+              <i class="bi bi-bug"></i>
+            </div>
+            <h6>QA Testing</h6>
+            <p class="small">Continuous integration</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT STATS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2 class="section-title">Project Achievements</h2>
+      </div>
+      <div class="row g-4 text-center">
+        <div class="col-md-3 fade-in-scroll">
+          <div class="achievement-card">
+            <h3 class="text-warning fw-bold">95%</h3>
+            <p class="text-secondary">Model Accuracy</p>
+          </div>
+        </div>
+        <div class="col-md-3 fade-in-scroll" style="--delay: 0.1s;">
+          <div class="achievement-card">
+            <h3 class="text-warning fw-bold">10K+</h3>
+            <p class="text-secondary">Training Records</p>
+          </div>
+        </div>
+        <div class="col-md-3 fade-in-scroll" style="--delay: 0.2s;">
+          <div class="achievement-card">
+            <h3 class="text-warning fw-bold">5</h3>
+            <p class="text-secondary">Input Parameters</p>
+          </div>
+        </div>
+        <div class="col-md-3 fade-in-scroll" style="--delay: 0.3s;">
+          <div class="achievement-card">
+            <h3 class="text-warning fw-bold">3</h3>
+            <p class="text-secondary">Risk Categories</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <h6 class="footer-title">Infotact Predictive</h6>
+          <p class="footer-text">Advanced engine maintenance predictions using AI</p>
+        </div>
+        <div class="col-lg-2">
+          <h6 class="footer-title">Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/project">Project</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h6 class="footer-title">Contact Info</h6>
+          <p class="footer-text small">
+            <i class="bi bi-envelope"></i> support@infotact.com<br>
+            <i class="bi bi-telephone"></i> +91-7357919798
+          </p>
+        </div>
+        <div class="col-lg-3">
+          <h6 class="footer-title">Follow Us</h6>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="footer-credit">© 2026 Infotact. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-end">
+          <small class="footer-credit">Built with ❤️ for predictive maintenance</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .team-card { background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.6)); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 1rem; padding: 2rem; text-align: center; transition: all 0.3s ease; animation: slideInUp 0.6s ease both; }
+    .team-card:hover { transform: translateY(-8px); border-color: rgba(245, 158, 11, 0.5); box-shadow: 0 15px 40px rgba(245, 158, 11, 0.1); }
+    .avatar-placeholder { width: 100px; height: 100px; background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.1)); border: 2px solid #f59e0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 2.5rem; color: #f59e0b; }
+    .team-name { color: var(--text-primary); font-weight: 700; }
+    .team-skills { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 1rem; }
+    .skill-tag { display: inline-block; padding: 0.3rem 0.8rem; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 2rem; font-size: 0.75rem; color: #fbbf24; font-weight: 600; }
+    .team-social { display: flex; gap: 1rem; justify-content: center; }
+    .team-social a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 50%; color: #f59e0b; text-decoration: none; transition: all 0.3s ease; }
+    .team-social a:hover { background: #f59e0b; color: #000; transform: translateY(-2px); }
+    .collab-feature { background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.6)); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 1rem; padding: 1.5rem; text-align: center; transition: all 0.3s ease; }
+    .collab-feature:hover { border-color: rgba(245, 158, 11, 0.5); transform: translateY(-5px); }
+    .collab-icon { width: 50px; height: 50px; background: rgba(245, 158, 11, 0.15); border: 2px solid rgba(245, 158, 11, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; color: #f59e0b; }
+    .achievement-card { background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.6)); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 1rem; padding: 2rem; transition: all 0.3s ease; }
+    .achievement-card:hover { border-color: rgba(245, 158, 11, 0.5); transform: scale(1.05); box-shadow: 0 10px 30px rgba(245, 158, 11, 0.1); }
+    @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-scroll, .fade-up').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
