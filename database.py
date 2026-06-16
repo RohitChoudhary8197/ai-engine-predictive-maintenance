@@ -16,7 +16,8 @@ def init_db():
     """Initialize database schema"""
     conn = get_db()
     cursor = conn.cursor()
-    
+
+    # Predictions Table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS predictions (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -34,10 +35,22 @@ def init_db():
             fail_prediction INTEGER NOT NULL
         )
     ''')
-    
+
+    # Users Table
+    cursor.execute('''
+            CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            fullname TEXT NOT NULL,
+            email TEXT UNIQUE NOT NULL,
+            phone TEXT NOT NULL,
+            address TEXT NOT NULL,
+            password TEXT NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    ''')
+
     conn.commit()
     conn.close()
-
 
 def save_prediction(form_data, result):
     """Save prediction to database"""
@@ -67,7 +80,6 @@ def save_prediction(form_data, result):
     
     conn.commit()
     conn.close()
-
 
 def get_predictions():
     """Get all predictions from database"""
@@ -123,3 +135,54 @@ def get_stats():
         'healthy': healthy,
         'critical': critical
     }
+def register_user(fullname, email, phone, address, password):
+    conn = get_db()
+    cursor = conn.cursor()
+
+    try:
+        cursor.execute("""
+            INSERT INTO users
+            (fullname,email,phone,address,password)
+            VALUES (?,?,?,?,?)
+        """, (fullname, email, phone, address, password))
+
+        conn.commit()
+        return True
+
+    except:
+        return False
+
+    finally:
+        conn.close()
+
+
+def get_user_by_email(email):
+    conn = get_db()
+    cursor = conn.cursor()
+
+    cursor.execute(
+        "SELECT * FROM users WHERE email=?",
+        (email,)
+    )
+
+    user = cursor.fetchone()
+
+    conn.close()
+
+def login_user(email, password):
+    """
+    Login user using email and password
+    """
+    conn = get_db()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT * FROM users
+        WHERE email=? AND password=?
+    """, (email, password))
+
+    user = cursor.fetchone()
+
+    conn.close()
+
+    return user

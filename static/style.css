@@ -902,7 +902,6 @@ body {
   animation-delay: 0.4s;
 }
   font-size: 0.9rem;
-}
 
 .form-control-footer:focus {
   outline: none;
@@ -1262,3 +1261,4 @@ body {
 
   animation:floatCard 3s ease-in-out infinite 1s;
 }
+

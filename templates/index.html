@@ -29,6 +29,11 @@
           <a href="/about" class="nav-link-custom">About</a>
           <a href="/project" class="nav-link-custom">Project</a>
           <a href="/contact" class="nav-link-custom">Contact</a>
+
+    <a href="/logout" class="nav-link-custom text-danger">
+        <i class="bi bi-box-arrow-right"></i> Logout
+    </a>
+        </div>
         </div>
       </div>
     </div>
@@ -70,34 +75,25 @@
   </a>
 
 </div>
-
     </div>
-
       <!-- RIGHT IMAGE -->
       <div class="col-lg-6 text-center fade-up delay-2">
-
         <div class="hero-image-container">
-
           <img src="{{ url_for('static', filename='images/engine-hero.jpg.jpg') }}"
                alt="Engine Maintenance"
                class="img-fluid hero-image">
-
           <!-- Floating Card -->
           <div class="floating-card">
             <i class="bi bi-cpu-fill"></i>
             AI Powered
           </div>
-
           <!-- Floating Card -->
           <div class="floating-card-2">
             <i class="bi bi-graph-up-arrow"></i>
             95% Accuracy
           </div>
-
         </div>
-
       </div>
-
     </div>
   </div>
 </section>
@@ -196,15 +192,6 @@
       </div>
     </div>
   </section>
-
-  <!-- PREDICT FORM -->
-  <section id="predict" class="predict-section">
-    <div class="container">
-      <div class="section-header text-center mb-5">
-        <span class="section-badge">⚙️ Engine Prediction</span>
-        <h2 class="section-title">Engine Health Check </h2>
-        <p class="section-subtitle">Get a detailed analysis of your engine.</p>
-      </div>
       
        <!-- PREDICT FORM -->
   <section id="predict" class="predict-section">
@@ -214,7 +201,6 @@
         <h2 class="section-title">Engine Health Check </h2>
         <p class="section-subtitle">Get a detailed analysis of your engine.</p>
       </div>
-      
       <div class="row align-items-center g-5">
 
   <!-- LEFT SIDE FORM -->
@@ -222,7 +208,6 @@
   <div class="col-lg-7">
     <div class="prediction-form-container fade-in-scroll">
 
-```
   <form action="/predict" method="POST">
 
     <div class="row g-4">
@@ -313,7 +298,7 @@
           <input type="number"
                  name="torque"
                  class="form-control-custom"
-                 placeholder="e.g. 42 Nm"
+                 placeholder="e.g. 90 Nm"
                  step="0.1"
                  required>
         </div>
@@ -329,34 +314,19 @@
   </form>
 
 </div>
-```
-
   </div>
-
   <!-- RIGHT SIDE IMAGE -->
 
   <div class="col-lg-5 text-center fade-up delay-2">
 
-```
 <div class="prediction-image-container">
 
   <img src="{{ url_for('static', filename='images/predictive-engine.jpg') }}"
        alt="AI Engine Prediction"
        class="img-fluid prediction-image">
 
-  <div class="prediction-badge badge-top">
-    🤖 AI Analysis
-  </div>
-
-  <div class="prediction-badge badge-bottom">
-    ⚡ 95% Accuracy
-  </div>
-
 </div>
-```
-
-  </div>
-
+</div>
 </div>
 </div>
 
