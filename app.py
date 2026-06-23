@@ -305,13 +305,15 @@ def page_not_found(e):
     return render_template("404.html"), 404
  
  
+# if __name__ == "__main__":
+ 
+#     print("\n>>> Server: http://127.0.0.1:5000")
+#     print(">>> Database: data/predictiveengine.db\n")
+ 
+#     app.run(
+#         host="127.0.0.1",
+#         port=5000,
+#         debug=False
+#     )
 if __name__ == "__main__":
- 
-    print("\n>>> Server: http://127.0.0.1:5000")
-    print(">>> Database: data/predictiveengine.db\n")
- 
-    app.run(
-        host="127.0.0.1",
-        port=5000,
-        debug=False
-    )
+    app.run(host="0.0.0.0", port=7860)
